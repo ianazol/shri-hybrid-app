@@ -103,4 +103,5 @@
     <preference name="detect-data-types" value="true" />
     <preference name="android-minSdkVersion" value="14" />
     <preference name="android-installLocation" value="auto" />
+    <preference name="ShowSplashScreenSpinner" value="false" />
 </widget>

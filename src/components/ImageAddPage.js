@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page } from 'react-onsenui';
+import Page from 'react-onsenui/src/components/Page.jsx';
 import Navbar from './Navbar';
 import ImageAddForm from './ImageAddForm';
 import OfflineInfo from './OfflineInfo';

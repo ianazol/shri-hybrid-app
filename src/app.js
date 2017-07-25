@@ -1,9 +1,5 @@
-import './css/onsenui.min.css';
-import './css/onsen-css-components.min.css';
-import './css/index.css';
-
 import React, { Component } from 'react';
-import { Navigator } from 'react-onsenui';
+import Navigator from 'react-onsenui/src/components/Navigator.jsx';
 import MainPage from './components/MainPage';
 import NetworkWatcher from './hoc/NetworkWatcher';
 import firebase from 'firebase';

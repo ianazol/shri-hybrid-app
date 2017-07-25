@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import ons from 'onsenui';
-import { Page, Toolbar, Button, Icon } from 'react-onsenui';
+import Page from 'react-onsenui/src/components/Page.jsx';
+import Button from 'react-onsenui/src/components/Button.jsx';
 import Navbar from './Navbar';
 import ImageList from './ImageList';
 import ImageAddPage from './ImageAddPage';
@@ -63,7 +63,6 @@ class MainPage extends Component {
     renderButton() {
         return (
             <Button className="button_bottom_fixed button_no-rounded"
-                    style={{backgroundColor: ons.platform.isIOS() ? '#4282cc' : null}}
                     onClick={this.showImagePicker.bind(this)}
                     modifier='large'>Добавить</Button>
         );

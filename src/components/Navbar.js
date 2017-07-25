@@ -1,5 +1,6 @@
 import React from 'react';
-import { Toolbar, BackButton } from 'react-onsenui';
+import Toolbar from 'react-onsenui/src/components/Toolbar.jsx';
+import BackButton from 'react-onsenui/src/components/BackButton.jsx';
 
 function Navbar({ title, navigator, backButton }) {
     return (

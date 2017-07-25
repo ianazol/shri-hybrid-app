@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Card, Button, Input } from 'react-onsenui';
+import Button from 'react-onsenui/src/components/Button.jsx';
+import Input from 'react-onsenui/src/components/Input.jsx';
 import {
     createBlobImageFromUri,
     uploadFileToFirebaseStorage,
