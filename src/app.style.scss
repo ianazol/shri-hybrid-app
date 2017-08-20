@@ -1,0 +1,21 @@
+.button_bottom_fixed {
+    top: auto;
+    bottom: 0;
+    position: absolute
+}
+
+.button_no-rounded {
+    border-radius: 0;
+}
+
+.button:active {
+    opacity: 0.9;
+}
+
+.button:disabled {
+    opacity: 0.7;
+}
+
+.page_fixed .page__content{
+    padding-bottom: 50px;
+}

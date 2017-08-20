@@ -1,13 +1,15 @@
+import './onsenui/onsen-css-components.min.css';
+import './onsenui/onsenui.min.css';
+import './app.style.scss';
 import React, { Component } from 'react';
-import Navigator from 'react-onsenui/src/components/Navigator.jsx';
+import { initFirebase } from './utils/firebase';
+import Navigator from 'react-onsenui/src/components/Navigator';
 import MainPage from './components/MainPage';
-import NetworkWatcher from './hoc/NetworkWatcher';
-import firebase from 'firebase';
-import firebaseConfig from './firebaseConfig';
+import NetworkWatcher from './components/NetworkWatcher';
 
 class App extends Component {
     componentWillMount() {
-        firebase.initializeApp(firebaseConfig);
+        initFirebase();
     }
 
     renderPage(route, navigator) {
