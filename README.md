@@ -2,7 +2,10 @@
 ```npm run build```
 
 Для разработки 
-```gulp```
+```npm run dev```
+
+Установка платформы и плагинов 
+```npm start```
 
 Используемые плагины
 - cordova-plugin-actionsheet (нативный контрол)
