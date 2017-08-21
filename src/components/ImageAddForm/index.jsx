@@ -12,6 +12,9 @@ class ImageAdd extends Component {
             title: '',
             loading: false
         };
+
+        this.onTitleChange = this.onTitleChange.bind(this);
+        this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
     onTitleChange(event) {
@@ -36,8 +39,6 @@ class ImageAdd extends Component {
             })
             .then(() => {
                 this.setState({ loading: false });
-            })
-            .then(() => {
                 navigator.notification.alert('Изображение опубликовано', this.gotoMainPage.bind(this), '');
             })
             .catch((error) => {
@@ -60,7 +61,7 @@ class ImageAdd extends Component {
 
     renderButton() {
         if (!this.state.loading) {
-            return <Button modifier='large' onClick={this.onFormSubmit.bind(this)}>Опубликовать</Button>;
+            return <Button modifier='large' onClick={this.onFormSubmit}>Опубликовать</Button>;
         } else {
             return <Button modifier='large' disabled>Сохраняем...</Button>;
         }
@@ -75,7 +76,7 @@ class ImageAdd extends Component {
                         value={this.state.title}
                         className="imageAddForm__title-input"
                         placeholder="Введите подпись..."
-                        onChange={this.onTitleChange.bind(this)}
+                        onChange={this.onTitleChange}
                     />
                 </div>
                 {this.renderButton()}

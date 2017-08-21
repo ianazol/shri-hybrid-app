@@ -6,6 +6,15 @@ import ImageList from '../ImageList';
 import ImageAddPage from '../ImageAddPage';
 
 class MainPage extends Component {
+    constructor(props) {
+        super(props);
+
+        this.renderToolbar = this.renderToolbar.bind(this);
+        this.renderButton = this.renderButton.bind(this);
+        this.showImagePicker = this.showImagePicker.bind(this);
+        this.onActionSelect = this.onActionSelect.bind(this);
+    }
+
     gotoImageAddPage(imageURI) {
         this.props.navigator.pushPage({ component: ImageAddPage, key: 'IMAGE_ADD_PAGE', imageURI });
     }
@@ -53,7 +62,7 @@ class MainPage extends Component {
             position: [20, 40]
         };
 
-        window.plugins.actionsheet.show(options, this.onActionSelect.bind(this));
+        window.plugins.actionsheet.show(options, this.onActionSelect);
     }
 
     renderToolbar() {
@@ -63,15 +72,15 @@ class MainPage extends Component {
     renderButton() {
         return (
             <Button className="button_bottom_fixed button_no-rounded"
-                    onClick={this.showImagePicker.bind(this)}
+                    onClick={this.showImagePicker}
                     modifier='large'>Добавить</Button>
         );
     };
 
     render() {
         return (
-            <Page renderToolbar={this.renderToolbar.bind(this)}
-                  renderFixed={this.renderButton.bind(this)}
+            <Page renderToolbar={this.renderToolbar}
+                  renderFixed={this.renderButton}
                   className="page_fixed">
                 <ImageList isOnline={this.props.isOnline} />
             </Page>

@@ -6,18 +6,21 @@ function networkWatcher(Component) {
             super();
             this.state = {
                 isOnline: true
-            }
+            };
+
+            this.offlineHandler = this.offlineHandler.bind(this);
+            this.onlineHandler = this.onlineHandler.bind(this);
         }
 
         componentWillMount() {
             this.checkNetworkConnection();
-            document.addEventListener("offline", this.offlineHandler.bind(this), false);
-            document.addEventListener("online", this.onlineHandler.bind(this), false);
+            document.addEventListener("offline", this.offlineHandler, false);
+            document.addEventListener("online", this.onlineHandler, false);
         }
 
         componentWillUnmount() {
-            document.removeEventListener("offline", this.offlineHandler.bind(this), false);
-            document.removeEventListener("online", this.onlineHandler.bind(this), false);
+            document.removeEventListener("offline", this.offlineHandler, false);
+            document.removeEventListener("online", this.onlineHandler, false);
         }
 
         shouldComponentUpdate(nextProps, nextState) {
